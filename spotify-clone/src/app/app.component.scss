@@ -1,14 +1,6 @@
 :host {
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
-
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
+    --background-color-dark-1: black;
+    --background-color-dark-2: rgb(32, 32, 32);
 
     --border-radius-low: 10px;
 
@@ -41,32 +33,241 @@
     grid-template-areas: "aside main main"
                          "player player player";
 
-    grid-template-columns: 350px 1fr;
-    grid-template-rows: 1fr auto;
-    border: 1px solid red;
+    grid-template-columns: 450px 1fr;
+    grid-template-rows: 90% 10%;
 
-    height: 99vh;
-    gap: 20px;
+    height: 100vh;
+    gap: 0px;
     & > *{
-        margin: 15px;
+        margin: 0px;
     }
+  }
+  svg{
+    filter: brightness(0) saturate(100%) invert(98%) sepia(2%) saturate(0%) hue-rotate(231deg) brightness(103%) contrast(102%);
   }
   .aside{
     grid-area: aside;
-    border-radius: var(--border-radius-low);
-    background-color: rgb(190, 186, 177) ;
+    display: flex;
+    flex-direction: column;
+  }
+  .aside__menu{
+    flex: 0 0 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: var(--background-color-dark-2);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    & > * {
+      margin-left: 20px;
+    }
+  }
+  .aside__menu__item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .aside__menu__item-text{
+    margin-left: 20px;
+  }
+  .aside__biblioteque{
+    flex: 0 0 84.5%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--background-color-dark-2);
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+
 
   }
+
+  .biblioteque__header{
+    flex: 0 0 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .header__title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & span {
+      margin-left: 10px;
+    }
+  }
+  .header-svg-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-split{
+    margin-left: auto;
+  }
+  .header__goto{
+    margin-left: 10px;
+  }
+  .biblioteque__tags{
+    flex: 0 0 5%;
+    margin-left: 20px;
+  }
+  .tag{
+    background-color: rgb(51, 51, 51);
+    padding: 10px 15px 10px 15px;
+    border-radius: 30px;
+    margin-right: 10px;
+  }
+  .biblioteque__search{
+    flex: 0 0 5%;
+  }
+  .biblioteque__musiclist{
+    flex: 0 0 85%;
+    overflow-y: scroll;
+
+    &:hover{
+      ::-webkit-scrollbar-thumb {
+          background: rgb(207, 98, 98); /* Dark gray scrollbar thumb */
+      }
+    }
+
+  }
+  .musiclist__search{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+
+
+
+
   .main{
     grid-area: main;
-    border-radius: var(--border-radius-low);
-    background-color: rgba(230, 186, 84, 0.637) ;
+    & > .inner-main{
+      background: rgb(32, 32, 32);
+      background: linear-gradient(0deg, rgb(32, 32, 32) 66%,rgba(87, 243, 84, 0.027) 79%, rgba(72, 196, 70, 0.11) 97%);
+      height: 98%;
+      margin: 10px;
+      background-color: var(--background-color-dark-2);
+      border-radius: 10px;
+      overflow-y: scroll;
+    }
+  }
+  .base__svg{
+    filter: brightness(0) saturate(100%) invert(98%) sepia(2%) saturate(0%) hue-rotate(231deg) brightness(103%) contrast(102%);
+  }
+  .options-tab{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin: 6px;
+  }
+  .install__app{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    border-radius: 30px;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .notifications{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: black;
+    padding: 4px;
+  }
+  .profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    font-size: 10px;
+  }
+  .controls{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
+    & > .control-button{
+      background-color: rgba(97, 95, 95, 0.5);
+      border-radius: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+    }
+    & .control__svg{
+      filter: brightness(0) saturate(100%) invert(98%) sepia(2%) saturate(0%) hue-rotate(231deg) brightness(103%) contrast(102%);
+    }
+  }
+  .options-split{
+    margin-left: auto;
   }
   .player{
     grid-area: player;
-    border-radius: var(--border-radius-low);
-    background-color: rgb(163, 238, 194) ;
     min-height: 70px;
+  }
+
+  .related-picks{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:10px;
 
   }
+  .app-related-element{
+    flex: 0 1 23%;
+    display: flex;
+    background-color: hsla(0, 0%, 31%, 0.363);
+    padding-right: 15px;
+    border-radius: 4px;
+
+    align-items: center;
+    position: relative;
+  }
+
+  .mixesForYou{
+    /*display: flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    margin: 20px;*/
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    overflow: hidden;
+  }
+.mixElement{
+    background-color: rgba(173, 216, 230, 0.295);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.yourFavArtist{
+  display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    overflow: hidden;
+}
+.artistElement{
+  background-color: rgba(173, 216, 230, 0.295);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

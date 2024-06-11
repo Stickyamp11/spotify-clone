@@ -1,0 +1,40 @@
+.mix-inner{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-left: 10%;
+    margin-top:5%;
+    margin-bottom: 5%;
+}
+.mix__img{
+    border-radius: 10px;
+}
+.artist__img{
+    border-radius: 100%;
+}
+.creators{
+    opacity: 0.5;
+}
+.base__img{
+    position: relative;
+}
+.description{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.mix-button{
+    position: absolute;
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    right: 30px;
+    bottom: 10px;
+    background-color: rgb(74, 219, 74);
+    opacity: 0;
+  }
+
+  .mix-inner:hover .mix-button{
+    opacity: 1;
+    transition: .2s;
+  }

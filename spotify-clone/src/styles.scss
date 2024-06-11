@@ -3,6 +3,35 @@
     padding: 0;
     margin: 0;
     border: 0;
-    background-color: rgb(20, 20, 20);
     color: white;
+}
+
+body{
+    background-color: rgb(20, 20, 20);
+}
+
+/* Main scrollbar container */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the vertical scrollbar */
+    height: 12px; /* Height of the horizontal scrollbar */
+}
+
+/* Track (progress bar) */
+::-webkit-scrollbar-track {
+    background: rgb(32, 32, 32)/* Black background for the scrollbar track */
+}
+
+/* Handle (scrollbar thumb) */
+::-webkit-scrollbar-thumb {
+    background: rgb(32, 32, 32) /* Dark gray scrollbar thumb */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Slightly lighter gray on hover */
+}
+
+/* Handle on active (when clicked) */
+::-webkit-scrollbar-thumb:active {
+    background: #777; /* Even lighter gray when active */
 }

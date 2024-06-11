@@ -1,0 +1,27 @@
+.related-element{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.related-img-inner{
+
+}
+
+.related-title{
+    margin-left: 15px;
+}
+
+.related-button{
+    position: absolute;
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    right: 10px;
+    background-color: rgb(74, 219, 74);
+    opacity: 0;
+  }
+
+  .related-element:hover .related-button{
+    opacity: 1;
+    transition: .2s;
+  }
