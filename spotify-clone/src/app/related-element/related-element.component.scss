@@ -21,6 +21,23 @@
     opacity: 0;
   }
 
+  .related-button::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-40%) translateY(-45%) rotate(90deg);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid rgb(0, 0, 0); /* Change color as needed */
+}
+.related-button:hover {
+  transition: .3s;
+  transform: scale(1.1);  
+  background-color: rgb(93, 228, 93);
+}
+
   .related-element:hover .related-button{
     opacity: 1;
     transition: .2s;

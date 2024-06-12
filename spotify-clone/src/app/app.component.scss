@@ -29,19 +29,23 @@
   }
 
   #app{
-    display: grid;
-    grid-template-areas: "aside main main"
-                         "player player player";
+    /*display: grid;
+    grid-template-areas: "aside main"
+                         "player player";
 
-    grid-template-columns: 450px 1fr;
+    grid-template-columns: minmax(300px,1fr) 1200px;
     grid-template-rows: 90% 10%;
-
+    */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: 100vh;
     gap: 0px;
     & > *{
         margin: 0px;
     }
   }
+
   svg{
     filter: brightness(0) saturate(100%) invert(98%) sepia(2%) saturate(0%) hue-rotate(231deg) brightness(103%) contrast(102%);
   }
@@ -49,6 +53,8 @@
     grid-area: aside;
     display: flex;
     flex-direction: column;
+    flex: 0 0 20%;
+    height: 90vh;
   }
   .aside__menu{
     flex: 0 0 10%;
@@ -150,6 +156,8 @@
 
 
   .main{
+    flex: 0 1 80%;
+    height: 90vh;
     grid-area: main;
     & > .inner-main{
       background: rgb(32, 32, 32);
@@ -201,7 +209,6 @@
   .controls{
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
 
     & > .control-button{
@@ -212,9 +219,14 @@
       justify-content: center;
       align-items: center;
       padding: 5px;
+      margin-right: 5px;
     }
     & .control__svg{
       filter: brightness(0) saturate(100%) invert(98%) sepia(2%) saturate(0%) hue-rotate(231deg) brightness(103%) contrast(102%);
+    }
+
+    & > .button-go{
+      margin-right: 0;
     }
   }
   .options-split{
@@ -222,7 +234,13 @@
   }
   .player{
     grid-area: player;
-    min-height: 70px;
+    flex: 0 0 100%;
+    height: 10vh;
+
+  }
+  .player-inner{
+    background-color: rgba(255, 255, 255, 0.37);
+    height: 100%;
   }
 
   .related-picks{
@@ -232,6 +250,7 @@
     gap:10px;
 
   }
+
   .app-related-element{
     flex: 0 1 23%;
     display: flex;
@@ -244,30 +263,71 @@
   }
 
   .mixesForYou{
-    /*display: flex;
+    display: flex;
     flex-direction: row;
-    flex-wrap:nowrap;
-    margin: 20px;*/
-    display: grid;
+    flex-wrap:wrap;
+    gap: 10px;
+    /*display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
-    overflow: hidden;
+    overflow: hidden;*/
+  }
+  .mixestitle{
+    display: flex;
+    align-items:baseline;
+  }
+  .showMore{
+    margin-left: auto;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.397);
+    font-weight: 600;
   }
 .mixElement{
-    background-color: rgba(173, 216, 230, 0.295);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 0 0 156px;
+    padding: 10px;
 }
 .yourFavArtist{
-  display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
     gap: 10px;
-    overflow: hidden;
 }
 .artistElement{
-  background-color: rgba(173, 216, 230, 0.295);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 156px;
+    padding: 10px;
 }
+
+@media (max-width: 1500px) {
+.aside{
+  flex: 0 0 30%;
+}
+.main{
+  flex: 0 0 70%;
+}
+.player{
+
+}
+}
+@media (max-width: 1250px) {
+  .related-picks{
+    & > .app-related-element{
+      flex: 1 1 45%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .aside__menu{
+      align-items: center;
+  }
+  .aside__menu > *{
+    margin-left: 0;
+  }
+}
+

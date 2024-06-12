@@ -18,12 +18,12 @@ body{
 
 /* Track (progress bar) */
 ::-webkit-scrollbar-track {
-    background: rgb(32, 32, 32)/* Black background for the scrollbar track */
+    background: transparent/* Black background for the scrollbar track */
 }
 
 /* Handle (scrollbar thumb) */
 ::-webkit-scrollbar-thumb {
-    background: rgb(32, 32, 32) /* Dark gray scrollbar thumb */
+    background: transparent /* Dark gray scrollbar thumb */
 }
 
 /* Handle on hover */

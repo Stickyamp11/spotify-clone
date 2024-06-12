@@ -1,10 +1,7 @@
 .mix-inner{
     display: flex;
     flex-direction: column;
-    width: 85%;
-    margin-left: 10%;
-    margin-top:5%;
-    margin-bottom: 5%;
+    position: relative;
 }
 .mix__img{
     border-radius: 10px;
@@ -28,12 +25,28 @@
     border-radius: 100%;
     width: 45px;
     height: 45px;
-    right: 30px;
-    bottom: 10px;
+    right: 5px;
+    bottom: 70px;
     background-color: rgb(74, 219, 74);
     opacity: 0;
   }
+  .mix-button::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-40%) translateY(-50%) rotate(90deg);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid rgb(0, 0, 0); /* Change color as needed */
+}
+.mix-button:hover {
+    transition: .1s;
+    transform: scale(1.1); 
+    background-color: rgb(93, 228, 93);
 
+  }
   .mix-inner:hover .mix-button{
     opacity: 1;
     transition: .2s;
