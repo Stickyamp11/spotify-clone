@@ -6,11 +6,13 @@ import { RelatedElementComponent } from './related-element/related-element.compo
 import { MixItemComponent } from './mix-item/mix-item.component';
 import { FooterMainComponent } from './footer-main/footer-main.component';
 import { ResponsiveNoneBreak1Directive } from './responsive-none-break-1.directive';
+import { ResponsiveNoneBreak1Directive750 } from './responsive-none-break-750.directive';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MusicListElementComponent, RelatedElementComponent,MixItemComponent,FooterMainComponent,ResponsiveNoneBreak1Directive],
+  imports: [CommonModule, RouterOutlet, MusicListElementComponent,
+     RelatedElementComponent,MixItemComponent,FooterMainComponent,ResponsiveNoneBreak1Directive,ResponsiveNoneBreak1Directive750],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

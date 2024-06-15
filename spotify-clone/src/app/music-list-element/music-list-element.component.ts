@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ResponsiveNoneBreak1Directive } from '../responsive-none-break-1.directive';
+import { ResponsiveNoneBreak1Directive750 } from '../responsive-none-break-750.directive';
 
 @Component({
   selector: 'music-list-element',
   standalone: true,
-  imports: [ResponsiveNoneBreak1Directive],
+  imports: [ResponsiveNoneBreak1Directive,ResponsiveNoneBreak1Directive750],
   templateUrl: './music-list-element.component.html',
   styleUrl: './music-list-element.component.scss'
 })

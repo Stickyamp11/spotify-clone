@@ -35,3 +35,13 @@ body{
 ::-webkit-scrollbar-thumb:active {
     background: #777; /* Even lighter gray when active */
 }
+
+
+@media (max-width: 700px) {
+    /* Main scrollbar container */
+::-webkit-scrollbar {
+    width: 0px; /* Width of the vertical scrollbar */
+    height: 0px; /* Height of the horizontal scrollbar */
+}
+}
+

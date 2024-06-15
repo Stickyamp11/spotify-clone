@@ -83,7 +83,9 @@
     margin-left: 20px;
   }
   .aside__biblioteque{
-    flex: 0 0 84.5%;
+    flex: 0 0 85%;
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -123,7 +125,6 @@
   }
   .biblioteque__tags{
     flex: 0 0 5%;
-    margin-left: 20px;
   }
   .tag{
     background-color: rgb(51, 51, 51);
@@ -204,7 +205,22 @@
     width: 20px;
     height: 20px;
     padding: 4px;
-    font-size: 10px;
+    font-size: 16px;
+    position: relative;
+  }
+  .profile::after{
+    content: "S";
+    position: absolute;
+    top: 18%;
+    width: 19px;
+    height: 19px;
+    left: 5px;
+    border-radius: 100%;
+    background-color: rgb(27, 180, 48);
+    text-align:center;
+    display: flex;
+  justify-content: center;
+  align-items: center;
   }
   .controls{
     display: flex;
@@ -238,11 +254,6 @@
     height: 10vh;
 
   }
-  .player-inner{
-    background-color: rgba(255, 255, 255, 0.37);
-    height: 100%;
-  }
-
   .related-picks{
     display: flex;
     flex-direction: row;
@@ -303,6 +314,101 @@
     padding: 10px;
 }
 
+
+.player-inner{
+  height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  & svg{
+    filter: brightness(0) saturate(100%) invert(56%) sepia(20%) saturate(0%) hue-rotate(159deg) brightness(120%) contrast(86%);
+  }
+  & svg:hover{
+    transition: .2s;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7483%) hue-rotate(220deg) brightness(110%) contrast(104%);
+    }
+
+  & .play svg{
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(8%) hue-rotate(146deg) brightness(100%) contrast(102%);
+      }
+  & .play {
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+        }
+}
+.title_author{
+  opacity: 0.5;
+  font-weight: 600;
+  font-size: 12px;
+}
+.song_title{
+}
+.title_title{
+  font-size: 14px;
+  font-weight: 600;
+}
+.control_controls{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  & > button{
+    background-color: transparent;
+  }
+
+  & > button > svg{
+    width: 20px;
+  }
+}
+.control_progress_bar{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin-left: 10%;
+}
+.control_line{
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.363);
+}
+.player_song{
+  flex: 0 0 25%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.player_control{
+  flex: 0 0 50%;
+}
+.control_progress_bar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.player_options{
+  flex: 0 0 25%;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: flex-end;
+  & > button{
+    background-color: transparent;
+  }
+  & > button > svg{
+    width: 20px;
+  }
+}
+
 @media (max-width: 1500px) {
 .aside{
   flex: 0 0 30%;
@@ -322,12 +428,102 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+  .player_song{
+    flex: 0 0 30%;
+  }
+  .player_control{
+    flex: 0 0 45%;
+
+  }
+  .player_options{
+    flex: 0 0 25%;
+    gap: 10px;
+    & > button > svg{
+      width: 18px;
+    }
+  }
+  .control_controls{
+    gap: 20px;
+  }
+}
+@media (max-width: 750px) {
+  .player_song{
+    flex: 0 0 10%;
+  }
+  .player_control{
+    flex: 0 0 50%;
+
+  }
+  .player_options{
+    flex: 0 0 20%;
+
+    gap: 10px;
+    & > button > svg{
+      width: 18px;
+    }
+  }
+  .control_controls{
+    gap: 20px;
+  }
+}
+
+@media (max-width: 750px) {
+  .aside{
+    flex: 0 0 20%;
+  }
+  .main{
+    flex: 0 0 80%;
+
+    & > .inner-main{
+      margin: 5px;
+    }
+  }
+  .biblioteque__header{
+    justify-content: center;
+  }
   .aside__menu{
       align-items: center;
+      margin: 5px;
   }
   .aside__menu > *{
     margin-left: 0;
   }
+  .aside__biblioteque{
+    margin: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .player_options{
+    gap: 5px;
+    flex-wrap: wrap;
+    & > button {
+      flex: 0 0 30%;
+    }
+    & > button > svg{
+      width: 18px;
+    }
+  }
+  .control_progress_bar{
+    width: 90%;
+    margin-left: 5%;
+  }
+  .control_controls{
+    gap: 15px;
+    & > button{
+      background-color: transparent;
+    }
+  
+    & > button > svg{
+      width: 20px;
+    }
+  }
+
+  .aside__biblioteque{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
 }
 
