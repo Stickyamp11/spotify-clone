@@ -136,7 +136,7 @@
     flex: 0 0 5%;
   }
   .biblioteque__musiclist{
-    flex: 0 0 85%;
+    flex: 0 0 90%;
     overflow-y: scroll;
 
     &:hover{
@@ -150,6 +150,20 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .recent_svg{
+    width: 16px;
+    margin-left: 2px;
+  }
+  .search_svg{
+    width: 16px;
+  }
+  .recent{
+    display: flex;
+    align-items: center;
   }
   
 
@@ -163,12 +177,16 @@
     & > .inner-main{
       background: rgb(32, 32, 32);
       background: linear-gradient(0deg, rgb(32, 32, 32) 66%,rgba(87, 243, 84, 0.027) 79%, rgba(72, 196, 70, 0.11) 97%);
-      height: 98%;
+      height: 99%;
       margin: 10px;
       background-color: var(--background-color-dark-2);
       border-radius: 10px;
       overflow-y: scroll;
     }
+  }
+  .inner-main-content{
+    padding: 15px;
+    padding-top: 5px;
   }
   .base__svg{
     filter: brightness(0) saturate(100%) invert(98%) sepia(2%) saturate(0%) hue-rotate(231deg) brightness(103%) contrast(102%);
@@ -259,6 +277,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap:10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 
   }
 
@@ -282,10 +302,14 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
     overflow: hidden;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .mixestitle{
     display: flex;
     align-items:baseline;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .showMore{
     margin-left: auto;
@@ -419,6 +443,11 @@
 .player{
 
 }
+.related-picks{
+  & > .app-related-element{
+    flex: 0 0 20%;
+  }
+}
 }
 @media (max-width: 1250px) {
   .related-picks{
@@ -525,5 +554,16 @@
     margin-right: 0;
   }
 
-}
+  
 
+}
+@media (max-width: 500px) {
+.mixElement{
+  flex: 0 0 120px;
+  padding: 0;
+}
+.artistElement{
+  flex: 0 0 120px;
+  padding: 0;
+}
+}

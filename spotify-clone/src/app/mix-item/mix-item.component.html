@@ -1,5 +1,5 @@
 <section class="mix-inner">
-    <img [ngClass]="{'mix__img': !isArtist, 'artist__img': isArtist}" [src]="loadedImgs[0]" alt="" width="164" height="164">
+    <img class="mix_basic_img" [ngClass]="{'mix__img': !isArtist, 'artist__img': isArtist}" [src]="loadedImgs[loadedImgSelected]" alt="">
     <button class="mix-button">
     </button>
     <div class="description">

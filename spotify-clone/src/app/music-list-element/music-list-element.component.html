@@ -1,9 +1,9 @@
 <section class="musicListElement">
     <picture class="musicImage">
-        <img class="artist-img" [src]="musicImgs[0]" />
+        <img class="artist-img" [src]="musicImgs[randomSelected]" [ngClass]="{'square_artist': isSquare()}" />
     </picture>
     <div class="information" appResponsiveNoneBreak750>
-        <div class="inf-title">Bad bunny</div>
+        <div class="inf-title">{{titleArray[randomSelected]}}</div>
         <div class="inf-type">Artista</div>
     </div>
 </section>

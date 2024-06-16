@@ -3,6 +3,10 @@
     flex-direction: column;
     position: relative;
 }
+.mix_basic_img{
+    width: 164px;
+    height: 164px;
+}
 .mix__img{
     border-radius: 10px;
 }
@@ -50,4 +54,12 @@
   .mix-inner:hover .mix-button{
     opacity: 1;
     transition: .2s;
+  }
+
+
+  @media (max-width: 600px) {
+    .mix_basic_img{
+        width: 128px;
+        height: 128px;
+    }
   }
